@@ -1,6 +1,0 @@
-id -Gn "$FT_USER" | tr " " "," | tr -d "\n"
-find . -type f -name '*.sh' | sed 's/.*\///' | sed 's/...$//'
-ifconfig | grep ether | tr -d "\t" | cut -d ' ' -f2
-cat /etc/passwd | sed '/^#/d' | sed -n 'n;p' | sed 's/:\(.*\)//g' | rev | sort -r | awk 'NR >= ENVIRON["FT_LINE1"] && NR <= ENVIRON["FT_LINE2"]' | tr '\n' ' ' | sed 's/ /_, /g'| sed '$ s/, $/./'
-
-echo $FT_NBR1 + $FT_NBR2 | sed "s/\'/0/g" | sed 's/\\/1/g'| sed "s/\"/2/g" | sed 's/?/3/g' | sed 's/!/4/g' | tr "mrdoc" "01234" | xargs echo "obase=13; ibase=5;" | bc | tr "0123456789ABC" "gtaio luSnemf"
