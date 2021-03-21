@@ -2,11 +2,11 @@
 #include <unistd.h>
 
 
-int	ft_strlcat(char *dst, char *src, int size)
+int	ft_strlcat(char *dst, char *src, unsigned int size)
 {
-	int	dstlen;
-	int	srclen;
-	int	i;
+	unsigned int	dstlen;
+	unsigned int	srclen;
+	unsigned int	i;
 
 	dstlen = 0;
 	srclen = 0;
@@ -15,7 +15,7 @@ int	ft_strlcat(char *dst, char *src, int size)
 		dstlen++;
 	while (src[srclen])
 		srclen++;
-	if (size == 0 || size <= dstlen)
+	if (size == 0 || size < dstlen)
 		return (srclen + size);
 	while (i < srclen && i < size - dstlen - 1)
 	{
